@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PortAventura - Datos</title>
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tab-label {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #4CAF50; /* Verde */
+    color: #fff; /* Texto blanco */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.tab-label:hover {
+    background-color: #45a049; /* Verde más oscuro */
+}
+
+.tab.active {
+    display: block;
+}
+
+.tab-content {
+    padding: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+h2 {
+    margin-top: 0;
+    color: #4CAF50; /* Verde */
+}
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+    }
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .tab {
+        display: none;
+    }
+    .tab.active {
+        display: block;
+    }
+    .tab-label {
+        cursor: pointer;
+        padding: 10px;
+        background-color: #e0e0e0;
+        border-radius: 5px 5px 0 0;
+    }
+    .tab-content {
+        padding: 10px;
+        border-radius: 0 0 5px 5px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="tabs">
+        <div class="tab-label" onclick="openTab('areas')">Áreas</div>
+        <div class="tab-label" onclick="openTab('atracciones')">Atracciones</div>
+        <div class="tab-label" onclick="openTab('empleados')">Empleados</div>
+        <div class="tab-label" onclick="openTab('visitantes')">Visitantes</div>
+    </div>
+
+    <div id="areas" class="tab active">
+        <h2>Áreas</h2>
+        <!-- Aquí puedes incluir el código HTML para mostrar los datos de la tabla 'areas' -->
+    </div>
+    <div id="atracciones" class="tab">
+        <h2>Atracciones</h2>
+        <!-- Aquí puedes incluir el código HTML para mostrar los datos de la tabla 'atracciones' -->
+    </div>
+    <div id="empleados" class="tab">
+        <h2>Empleados</h2>
+        <!-- Aquí puedes incluir el código HTML para mostrar los datos de la tabla 'empleados' -->
+    </div>
+    <div id="visitantes" class="tab">
+        <h2>Visitantes</h2>
+        <!-- Aquí puedes incluir el código HTML para mostrar los datos de la tabla 'visitantes' -->
+    </div>
+</div>
+
+<script>
+    function openTab(tabName) {
+        var tabs = document.querySelectorAll('.tab');
+        var tabLabels = document.querySelectorAll('.tab-label');
+
+        tabs.forEach(function(tab) {
+            tab.classList.remove('active');
+        });
+
+        tabLabels.forEach(function(label) {
+            label.style.backgroundColor = '#e0e0e0';
+        });
+
+        document.getElementById(tabName).classList.add('active');
+        document.querySelector('[onclick="openTab(\'' + tabName + '\')"]').style.backgroundColor = '#ccc';
+    }
+</script>
+
+</body>
+</html>
